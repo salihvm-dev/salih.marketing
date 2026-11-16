@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Mohammed Salih VM — Digital Marketing Manager specializing in performance marketing, lead generation, SEO and business growth.">
+  <title>Mohammed Salih VM | Digital Marketing Manager</title>
+  <style>
+    :root{
+      --bg:#08090c;
+      --panel:#101217;
+      --text:#f5f5f2;
+      --muted:#9b9ea8;
+      --line:rgba(255,255,255,.10);
+      --accent:#d7ff4f;
+      --accent2:#8da52f;
+      --max:1200px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      background:var(--bg);color:var(--text);line-height:1.5;overflow-x:hidden
+    }
+    a{color:inherit;text-decoration:none}
+    .noise{position:fixed;inset:0;pointer-events:none;opacity:.035;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");z-index:10}
+    nav{
+      position:fixed;top:0;left:0;right:0;z-index:20;
+      backdrop-filter:blur(16px);background:rgba(8,9,12,.72);border-bottom:1px solid var(--line)
+    }
+    .nav-inner{max-width:var(--max);margin:auto;padding:18px 24px;display:flex;align-items:center;justify-content:space-between}
+    .brand{font-weight:800;letter-spacing:-.04em}
+    .brand span{color:var(--accent)}
+    .nav-links{display:flex;gap:28px;color:var(--muted);font-size:14px}
+    .nav-links a:hover{color:var(--text)}
+    .nav-cta{padding:10px 16px;border:1px solid var(--line);border-radius:999px;font-size:13px}
+    .nav-cta:hover{border-color:var(--accent)}
+    .hero{min-height:100vh;position:relative;display:flex;align-items:center;overflow:hidden}
+    .hero-grid{
+      position:absolute;inset:0;
+      background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);
+      background-size:70px 70px;
+      mask-image:linear-gradient(to bottom,black,transparent 90%);
+    }
+    .glow{position:absolute;width:600px;height:600px;border-radius:50%;right:-180px;top:80px;background:radial-gradient(circle,rgba(215,255,79,.12),transparent 65%);filter:blur(10px)}
+    .container{max-width:var(--max);width:100%;margin:auto;padding:110px 24px 70px;position:relative;z-index:2}
+    .eyebrow{display:flex;align-items:center;gap:10px;color:var(--accent);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.16em;margin-bottom:24px}
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--accent);box-shadow:0 0 18px var(--accent)}
+    h1{font-size:clamp(52px,8vw,104px);line-height:.92;letter-spacing:-.065em;max-width:900px}
+    h1 em{font-style:normal;color:var(--accent)}
+    .hero-copy{max-width:700px;margin-top:28px;color:#b6b8c0;font-size:18px;line-height:1.75}
+    .actions{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;border-radius:999px;font-weight:750;font-size:14px;transition:.25s ease}
+    .btn-primary{background:var(--accent);color:#10120b}
+    .btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 35px rgba(215,255,79,.15)}
+    .btn-secondary{border:1px solid var(--line);color:var(--text)}
+    .btn-secondary:hover{border-color:rgba(215,255,79,.55);transform:translateY(-2px)}
+    .credibility{display:flex;gap:22px;flex-wrap:wrap;margin-top:48px;color:#777b86;font-size:13px}
+    .credibility b{color:#d5d7dc}
+    .hero-graph{position:absolute;right:4%;bottom:12%;width:min(470px,42vw);height:260px;opacity:.75}
+    .hero-graph svg{width:100%;height:100%;overflow:visible}
+    .graph-line{fill:none;stroke:var(--accent);stroke-width:3;stroke-linecap:round;stroke-dasharray:800;stroke-dashoffset:800;animation:draw 2.8s ease forwards 1s}
+    .graph-area{fill:url(#fade);opacity:.35}
+    @keyframes draw{to{stroke-dashoffset:0}}
+    .tag{position:absolute;padding:9px 12px;border:1px solid var(--line);background:rgba(16,18,23,.75);backdrop-filter:blur(10px);border-radius:999px;font-size:11px;color:#d7d9de;animation:float 4s ease-in-out infinite}
+    .tag.one{right:31%;top:24%}.tag.two{right:4%;top:43%;animation-delay:.8s}.tag.three{right:26%;bottom:4%;animation-delay:1.4s}
+    @keyframes float{50%{transform:translateY(-8px)}}
+    .scroll{position:absolute;bottom:25px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:#747780}
+    section{border-top:1px solid var(--line)}
+    .section{max-width:var(--max);margin:auto;padding:120px 24px}
+    .kicker{color:var(--accent);font-size:12px;text-transform:uppercase;letter-spacing:.16em;font-weight:800;margin-bottom:16px}
+    h2{font-size:clamp(38px,5vw,66px);letter-spacing:-.055em;line-height:1}
+    .section-intro{max-width:700px;color:var(--muted);font-size:17px;margin-top:20px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:50px}
+    .card{padding:28px;background:linear-gradient(145deg,#111319,#0d0f13);border:1px solid var(--line);border-radius:22px;min-height:190px}
+    .card h3{font-size:20px;margin-bottom:12px}
+    .card p{color:var(--muted);font-size:14px;line-height:1.7}
+    .number{color:var(--accent);font-size:12px;font-weight:800;margin-bottom:34px}
+    footer{border-top:1px solid var(--line);padding:30px 24px;color:#6f727b;text-align:center;font-size:12px}
+    @media(max-width:850px){
+      .nav-links{display:none}
+      .hero-graph{position:relative;right:auto;bottom:auto;width:100%;height:220px;margin-top:40px}
+      .container{padding-top:130px}
+      .cards{grid-template-columns:1fr}
+    }
+    @media(max-width:520px){
+      h1{font-size:52px}
+      .hero-copy{font-size:16px}
+      .section{padding:85px 20px}
+      .container{padding-left:20px;padding-right:20px}
+      .credibility{gap:10px 18px}
+      .hero-graph{height:180px}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*::before,*::after{scroll-behavior:auto!important;animation:none!important;transition:none!important}
+    }
+  </style>
+</head>
+<body>
+  <div class="noise"></div>
+
+  <nav>
+    <div class="nav-inner">
+      <a class="brand" href="#top">SALIH<span>.</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="nav-cta" href="#contact">Work With Me →</a>
+    </div>
+  </nav>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-grid"></div>
+      <div class="glow"></div>
+
+      <div class="container">
+        <div class="eyebrow"><span class="dot"></span> Digital Marketing · Performance · Growth</div>
+
+        <h1>I Turn Digital Marketing Into <em>Business Growth.</em></h1>
+
+        <p class="hero-copy">
+          I’m Mohammed Salih VM, a Digital Marketing Manager with 3+ years of hands-on experience helping businesses build stronger digital visibility, generate quality leads and create measurable marketing growth.
+        </p>
+
+        <div class="actions">
+          <a class="btn btn-primary" href="#contact">Work With Me →</a>
+          <a class="btn btn-secondary" href="#expertise">Explore My Work</a>
+        </div>
+
+        <div class="credibility">
+          <span><b>3+ Years</b> Experience</span>
+          <span><b>Google Ads</b></span>
+          <span><b>Meta Ads</b></span>
+          <span><b>SEO</b></span>
+          <span><b>Lead Generation</b></span>
+        </div>
+
+        <div class="hero-graph" aria-hidden="true">
+          <svg viewBox="0 0 500 260" preserveAspectRatio="none">
+            <defs>
+              <linearGradient id="fade" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stop-color="#d7ff4f" stop-opacity=".32"/>
+                <stop offset="100%" stop-color="#d7ff4f" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path class="graph-area" d="M0 240 L45 224 L92 226 L140 190 L190 198 L235 160 L280 170 L325 120 L370 135 L420 75 L500 20 L500 260 L0 260 Z"/>
+            <path class="graph-line" d="M0 240 C45 224,65 230,92 226 C120 220,122 190,140 190 C160 190,173 202,190 198 C210 192,220 158,235 160 C252 162,263 174,280 170 C300 164,310 118,325 120 C343 122,352 139,370 135 C393 130,400 82,420 75 C447 66,470 43,500 20"/>
+          </svg>
+          <div class="tag one">Performance Marketing</div>
+          <div class="tag two">Quality Leads</div>
+          <div class="tag three">Business Growth</div>
+        </div>
+      </div>
+
+      <div class="scroll">Scroll to explore ↓</div>
+    </section>
+
+    <section id="about">
+      <div class="section">
+        <div class="kicker">01 / Who I Am</div>
+        <h2>Marketing built around<br>real business goals.</h2>
+        <p class="section-intro">
+          I combine paid advertising, SEO, content strategy, social media and analytics to help businesses improve visibility, attract the right audience and generate meaningful enquiries.
+        </p>
+      </div>
+    </section>
+
+    <section id="expertise">
+      <div class="section">
+        <div class="kicker">02 / Expertise</div>
+        <h2>What I work on.</h2>
+        <div class="cards">
+          <article class="card"><div class="number">01</div><h3>Performance Marketing</h3><p>Google Ads, Meta Ads, campaign strategy, optimisation and lead-generation focused advertising.</p></article>
+          <article class="card"><div class="number">02</div><h3>SEO & Visibility</h3><p>Search visibility, website optimisation, keyword research, Google Search Console and organic growth.</p></article>
+          <article class="card"><div class="number">03</div><h3>Social & Content</h3><p>Content planning, social media strategy, short-form video direction and brand communication.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section">
+        <div class="kicker">03 / Experience</div>
+        <h2>3+ years of<br>hands-on marketing.</h2>
+        <p class="section-intro">
+          Currently working as a Digital Marketing Manager at English Mithra, with previous agency experience across multiple industries and client accounts.
+        </p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="section">
+        <div class="kicker">04 / Contact</div>
+        <h2>Have a business<br>you want to grow?</h2>
+        <p class="section-intro">Let’s discuss your goals, marketing challenges and the opportunities available through digital.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="mailto:YOUR-EMAIL@example.com">Start a Conversation →</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Mohammed Salih VM · Digital Marketing Manager
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Subtle pointer movement for the hero glow.
+    const glow = document.querySelector(".glow");
+    if (glow && !window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      window.addEventListener("pointermove", (e) => {
+        const x = (e.clientX / window.innerWidth - .5) * 35;
+        const y = (e.clientY / window.innerHeight - .5) * 25;
+        glow.style.transform = `translate(${x}px, ${y}px)`;
+      }, {passive:true});
+    }
+  </script>
+</body>
+</html>
